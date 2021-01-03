@@ -1,0 +1,50 @@
+<%- include('partials/header'); -%>
+<link rel="stylesheet" href="stylesheets/resolutions.css">
+
+<div class="container">
+  <h1><%= name%>'s New Year resolutions</h1>
+  <div class="row">
+    <% resolutions.forEach(function(resolution){ %>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= resolution["desc"]%></h5>
+        </div>
+        <div class="container count-buttons">
+          <div class="row">
+            <% if (resolution['type'] === 0) { %>
+            <div class="col-sm-4 streak">
+              <b> <%= resolution["streak"] %> days </b>
+            </div>
+            <div class="col-sm-8">
+              <form action="/check-in" method="post">
+                <button type="submit" class="submit-button check-in">check in</button>
+              </form>
+            </div>
+            <% } %>
+            <% if (resolution['type'] === 1) { %>
+            <div class="col-sm-4 streak">
+              <b>... days </b>
+            </div>
+            <div class="col-sm-8">
+              <form action="/check-in" method="post">
+                <button type="submit" class=" btn btn-primary submit-button fail">fail</button>
+              </form>
+            </div>
+            <% } %>
+            <% if (resolution['type'] === 2) { %>
+            <div class="col-sm-12">
+              <form action="/check-in" method="post">
+                <button type="submit" class=" btn btn-primary submit-button complete">complete</button>
+              </form>
+            </div>
+            <% } %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
+<%- include('partials/footer'); -%>

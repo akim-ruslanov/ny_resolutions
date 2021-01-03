@@ -1,0 +1,86 @@
+body {
+  padding: 0px 0px 0px 0px;
+  background-color: #FF8296;
+
+}
+
+.container {
+  padding: 0px 0px 0px 0px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: white;
+}
+
+.card {
+  height: 330px !important;
+  background-color: #F0F2E7;
+  border-radius: 40px;
+  margin-right: 19px;
+  margin-left: 19px;
+  margin-bottom: 19px;
+  margin-top: 19px;
+}
+
+.count-buttons {
+  text-align: center;
+  align-self: flex;
+  margin-bottom: 10%;
+  width: 100%;
+}
+
+.streak {
+  text-align: right;
+  line-height: 63px;
+  padding: 0px;
+  font-size: 24px;
+}
+
+.submit-button {
+  padding: 0px;
+  border-radius: 50px;
+  font-size: 24px;
+  font-family: inherit;
+  width: 150px;
+  height: 65px;
+  border: 0px solid black;
+  color: white;
+  font-family: "Baloo Paaji";
+}
+
+.check-in {
+  background-color: #FFCA27;
+}
+
+.fail {
+  background-color: #F68171;
+}
+
+.complete {
+  background-color: #00D208;
+
+}
+
+form {
+  display: flex;
+}
+
+
+@media (min-width: 360px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .container {
+    max-width: 2200px;
+    margin: 0;
+  }
+}
