@@ -37,9 +37,7 @@ router.get('/typeselect', function(req, res, next) {
   res.render('typeselect', {function: api.addEntry});
 });
 
-router.post('/typeselect', function(req, res, next) {
-  api.addEntry("", )
-})
+
 
 router.get('/resolutions', function(req, res, next) {
   res.render('resolutions', {
