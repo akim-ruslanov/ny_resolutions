@@ -56,8 +56,10 @@ router.get('/welcome', function(req, res, next) {
 router.post('/welcome', function(req, res, next) {
   // call API to do backend stuff
   api.setUserName(req.body["name"]);
-  res.render('typeselect');
-
+  res.render('resolutions', {
+    name: req.body['name'],
+    resolutions: test_resolutions
+  });
 })
 
 
