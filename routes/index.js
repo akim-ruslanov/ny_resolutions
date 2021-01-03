@@ -32,6 +32,9 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+router.get('/typeselect', function(req, res, next) {
+  res.render('typeselect');
+});
 
 router.get('/resolutions', function(req, res, next) {
   res.render('resolutions', {
