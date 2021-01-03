@@ -41,6 +41,7 @@ router.post('/typeselect', function(req, res, next) {
   res.redirect('/resolution')
 })
 
+
 router.get('/resolutions', function(req, res, next) {
   res.render('resolutions', {
     name: api.getUserName(),
