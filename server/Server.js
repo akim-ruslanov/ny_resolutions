@@ -14,6 +14,12 @@ function addEntry(goalDesc, type) {
         'type': type,
         'id': id //unique id for each entry
     }
+    if (type === TYPE_DAILY_TASK) {
+      goal['streak'] = 0;
+    }
+    if (type === TYPE_DO_ONCE) {
+      goal['done'] = false;
+    }
     localStorage.setItem('id', id.toString())
     let goalArray = getEntries();
     goalArray.push(goal);
@@ -56,4 +62,12 @@ function deleteEntry(entryId){
 //takes a string and sets the name
 function setUserName(name) {
     localStorage.userName = name;
+}
+
+module.exports = {
+  addEntry,
+  getEntries,
+  setEntryDesc,
+  deleteEntry,
+  setUserName
 }
