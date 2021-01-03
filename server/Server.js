@@ -4,7 +4,8 @@ const TYPE_DAILY_TASK = 0; //daily task that needs to be done once a day, i.e. w
 const TYPE_DO_NOT_DO = 1; //something not to do: i.e. smoke cigarettes
 const TYPE_DO_ONCE = 2; //something like wanting to go bungee jumping (one-time goal)
 
-
+var LocalStorage = require('node-localstorage').LocalStorage,
+localStorage = new LocalStorage('./scratch');
 //Add a resolution entry
 // takes in string and number
 function addEntry(goalDesc, type) {
@@ -61,7 +62,15 @@ function deleteEntry(entryId){
 
 //takes a string and sets the name
 function setUserName(name) {
-    localStorage.userName = name;
+    console.log('setting username to ', name)
+    try{
+    localStorage.setItem('userName', name);}
+    catch(err){
+        console.log(err)
+    }
+}
+function getUserName() {
+   return  localStorage.getItem('userName');
 }
 
 module.exports = {
@@ -69,5 +78,6 @@ module.exports = {
   getEntries,
   setEntryDesc,
   deleteEntry,
-  setUserName
+  setUserName,
+  getUserName
 }
