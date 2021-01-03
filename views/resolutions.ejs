@@ -27,20 +27,19 @@
               <b>... days </b>
             </div>
             <div class="col-sm-8">
-              <form action="/check-in" method="post">
+              <form action="/fail" method="post">
                 <button type="submit" class=" btn btn-primary submit-button fail">fail</button>
               </form>
             </div>
             <% } %>
             <% if (resolution['type'] === 2) { %>
             <div class="col-sm-12">
-              <form action="/check-in" method="post">
+              <form action="/complete" method="post">
                 <button type="submit" class=" btn btn-primary submit-button complete">complete</button>
               </form>
             </div>
             <% } %>
           </div>
-
         </div>
       </div>
     </div>
