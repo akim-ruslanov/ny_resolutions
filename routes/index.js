@@ -54,8 +54,9 @@ router.get('/welcome', function(req, res, next) {
 
 router.post('/welcome', function(req, res, next) {
   // call API to do backend stuff
-  api.setUserName(req.body["name"]);
-  res.render('typeselect');
+  // api.setUserName(req.body["name"]);
+  console.log(req.body["name"]);
+  
 })
 
 
