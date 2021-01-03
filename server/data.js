@@ -1,7 +1,7 @@
-let resolutions = [
-    {},
+var resolutions = [
+    {"demo":2},
     {},
     {}
 ]
 
-module.exports = resolutions
+export {resolutions}
