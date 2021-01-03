@@ -43,6 +43,14 @@ router.get('/resolutions', function(req, res, next) {
   });
 });
 
+router.get('/resolution', function(req, res, next) {
+  res.render('resolution');
+});
+
+router.get('/welcome', function(req, res, next) {
+  res.render('welcome');
+});
+
 
 
 

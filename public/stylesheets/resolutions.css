@@ -21,6 +21,16 @@ body {
   margin-top: 19px;
 }
 
+.card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.count-buttons {
+  background-color: #F0F2E7;
+}
+
 .count-buttons {
   text-align: center;
   align-self: flex;
@@ -57,7 +67,7 @@ body {
 
 .complete {
   background-color: #00D208;
-
+  margin: auto;
 }
 
 form {
