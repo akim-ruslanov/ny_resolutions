@@ -6,7 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-
+router.get('/typeselect', function(req, res, next) {
+  res.render('typeselect');
+});
 
 
 
