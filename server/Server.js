@@ -63,6 +63,9 @@ function deleteEntry(entryId){
 function setUserName(name) {
     localStorage.userName = name;
 }
+function getUserName(name) {
+   return  localStorage.userName;
+}
 
 module.exports = {
   addEntry,
