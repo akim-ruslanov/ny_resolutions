@@ -39,15 +39,20 @@ router.get('/typeselect', function(req, res, next) {
 
 router.get('/resolutions', function(req, res, next) {
   res.render('resolutions', {
-    name: "Akim",
-    resolutions: test_resolutions
+    name: api.getUserName(),
+    resolutions: api.getEntries(),
   });
 });
 
 
-router.get('/resolution', function(req, res, next) {
-  res.render('resolution');
+router.get('/resolution/:id', function(req, res, next) {
+  res.render('resolution', {id: req.params.id});
 });
+
+router.post('/resolution', function(req, res, next) {
+  api.setEntryDesc(req.body["id"], req.body["content"]);
+  res.redirect('/resolutions')
+})
 
 router.get('/welcome', function(req, res, next) {
   res.render('welcome');
@@ -56,10 +61,11 @@ router.get('/welcome', function(req, res, next) {
 router.post('/welcome', function(req, res, next) {
   // call API to do backend stuff
   api.setUserName(req.body["name"]);
-  res.render('resolutions', {
-    name: req.body['name'],
-    resolutions: test_resolutions
-  });
+  // res.render('resolutions', {
+  //   name: req.body['name'],
+  //   resolutions: test_resolutions
+  // });
+  res.redirect('typeselect');
 })
 
 
