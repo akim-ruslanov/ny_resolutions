@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var api = require("../server/Server");
+
 let test_resolutions = [{
     'desc': "go to the gym every day",
     'type': 0,
@@ -55,7 +56,11 @@ router.get('/welcome', function(req, res, next) {
 router.post('/welcome', function(req, res, next) {
   // call API to do backend stuff
   api.setUserName(req.body["name"]);
-  res.render('typeselect');
+  res.render('resolutions', {
+    name: req.body['name'],
+    resolutions: test_resolutions
+  });
+  
 })
 
 
