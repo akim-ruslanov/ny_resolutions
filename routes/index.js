@@ -60,7 +60,6 @@ router.post('/welcome', function(req, res, next) {
     name: req.body['name'],
     resolutions: test_resolutions
   });
-
 })
 
 
